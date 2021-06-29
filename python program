@@ -1,0 +1,14 @@
+from collections import defaultdict
+f1 = open("First.txt", "r")
+data = f1.read()
+words = data.split()
+f2 = open("Second.txt", "w")
+res = defaultdict(int)
+for ele in words:
+    res[ele.lower()]+=1
+
+f2.write(str(dict(res)))
+f2.close()
+f2 = open("Second.txt", "r")
+print("Contents of second.txt:")
+print(f2.read)
